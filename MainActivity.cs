@@ -44,12 +44,12 @@ namespace parlalo6._0
                         langAvailable.Add(locale.DisplayLanguage);
                         break;
                     case LanguageAvailableResult.CountryAvailable:
-                         langAvailable.Add(locale.DisplayLanguage);
+                        langAvailable.Add(locale.DisplayLanguage);
                         break;
                     case LanguageAvailableResult.CountryVarAvailable:
-                         langAvailable.Add(locale.DisplayLanguage);
+                        langAvailable.Add(locale.DisplayLanguage);
                         break;
-                        }
+                }
 
             }
 
@@ -93,15 +93,6 @@ namespace parlalo6._0
                 textToSpeech.SetLanguage(Java.Util.Locale.Default);
             if (status == OperationResult.Success)
                 textToSpeech.SetLanguage(lang);
-                   }
-        protected override void OnActivityResult(int req, Result res, Intent data)
-        {
-            if (req == NeedLang)
-            {
-                var installTTS = new Intent();
-                installTTS.SetAction(TextToSpeech.Engine.ActionInstallTtsData);
-                StartActivity(installTTS);
-                            }
-                    }
-            }
+        }
+    }
 }
